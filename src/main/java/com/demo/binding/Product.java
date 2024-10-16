@@ -1,9 +1,20 @@
 package com.demo.binding;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class Product {
+	
+	@NotNull(message="Id is required")
 	private Integer pid;
+	@NotEmpty(message="Name is required")
+	@Size(min=3 ,max=8)
 	private String pname;
+	@NotNull(message="price is required")
 	private Double price;
+	
+	
 	public Integer getPid() {
 		return pid;
 	}
